@@ -16,9 +16,25 @@ public class Controles : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetButtonDown("Vertical"))	{
-            y += 100;
+        if(Input.GetButtonDown("frente")){
+            x += 300;
+            ave.AddForce(new Vector2(x, 0));
+            x = 0;
+        }
+        if (Input.GetButtonDown("tras")){
+            x -= 300;
+            ave.AddForce(new Vector2(x, 0));
+            x = 0;
+        }
+        if(Input.GetButtonDown("cima")){
+            y += 300;
             ave.AddForce(new Vector2(0, y));
+            y = 0;
+        }
+        if (Input.GetButtonDown("baixo")){
+            y -= 300;
+            ave.AddForce(new Vector2(0, y));
+            y = 0;
         }
 	}
 }
